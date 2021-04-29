@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Animate, { BounceIn } from 'animate-css-styled-components';
 import {
   ProductContainer,
   Discount,
@@ -20,14 +21,16 @@ const CartProduct = ({ image, name, discount, price }) => {
   );
 
   return (
-    <ProductContainer>
-      <ProductImage image={image} />
-      <ProductInfo>
-        <Name>{name}</Name>
-        <Discount>R$ {discountedValue}</Discount>
-        <Price>R$ {filteredPrice.replace('.', ',')}</Price>
-      </ProductInfo>
-    </ProductContainer>
+    <Animate Animation={BounceIn} duration="1s" delay="0.2s">
+      <ProductContainer>
+        <ProductImage image={image} />
+        <ProductInfo>
+          <Name>{name}</Name>
+          <Discount>R$ {discountedValue}</Discount>
+          <Price>R$ {filteredPrice.replace('.', ',')}</Price>
+        </ProductInfo>
+      </ProductContainer>
+    </Animate>
   );
 };
 

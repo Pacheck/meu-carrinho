@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import api from '../../services/api';
 import CartProduct from '../CartProduct';
 import {
@@ -16,7 +17,7 @@ import {
   Message,
 } from './styles';
 
-const CartContainer = () => {
+const CartContainer = ({ path }) => {
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(null);
   const [freeShipping, setFreeShipping] = useState(false);
@@ -24,7 +25,7 @@ const CartContainer = () => {
 
   async function getData() {
     try {
-      const response = await api.get('/acima');
+      const response = await api.get(path);
       setProducts(response.data.items);
     } catch (err) {
       console.log(err);
@@ -91,4 +92,9 @@ const CartContainer = () => {
     </Container>
   );
 };
+
+CartContainer.propTypes = {
+  path: PropTypes.string.isRequired,
+};
+
 export default CartContainer;

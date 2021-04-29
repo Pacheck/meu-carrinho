@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+export const FadeInAnimation = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
 
 export const Container = styled.div`
   background-color: #fff;
@@ -53,6 +58,8 @@ export const CartCheckout = styled.div`
   justify-content: center;
 `;
 
+
+
 export const CheckoutButton = styled.button`
   width: 90%;
   height: 60%;
@@ -62,7 +69,31 @@ export const CheckoutButton = styled.button`
   color: #fff;
   font-size: 38px;
   font-weight: 600;
+
+  animation-duration: ${props => props.duration};
+  animation-timing-function: ${props => props.timingFunction};
+  animation-delay: ${props => props.delay};
+  animation-iteration-count: ${props => props.iterationCount};
+  animation-direction: ${props => props.direction};
+  animation-fill-mode: ${props => props.fillMode};
+  animation-play-state:  ${props => props.playState};
+  display: ${props => props.display};
+
+  &:hover {
+    animation-name: ${FadeInAnimation};
+  }
 `;
+
+CheckoutButton.defaultProps = {
+  duration: '1s',
+  timingFunction: 'ease',
+  delay: '0s',
+  iterationCount: '1',
+  direction: 'normal',
+  fillMode: 'both',
+  playState: 'running',
+  display: 'block'
+};
 
 export const FreteMessage = styled.div`
   width: 80%;
