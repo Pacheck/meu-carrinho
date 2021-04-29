@@ -1,5 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-import BaseAnimation from '../../styles/baseAnimation';
+import styled from 'styled-components';
 
 export const ProductContainer = styled.div`
   display: flex;
@@ -36,12 +35,3 @@ export const Discount = styled.h3`
 `;
 
 export const Price = styled.h3``;
-
-export const FadeInAnimation = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
-
-export const FadeIn = styled(BaseAnimation)`
-  animation-name: ${FadeInAnimation};
-`;

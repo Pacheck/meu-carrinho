@@ -5,7 +5,7 @@ import { Container } from './styles';
 
 const FretePago = () => (
   <Container>
-    <CartContainer />
+    <CartContainer path="/abaixo" />
   </Container>
 );
 export default FretePago;
