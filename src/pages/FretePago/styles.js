@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100vh;
-  text-align: center;
-  background-color: lightgreen;
-
-
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d1d8e5;
 `;

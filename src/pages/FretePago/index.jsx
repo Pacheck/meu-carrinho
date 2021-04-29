@@ -1,24 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import cuck from '../../services/api';
+import CartContainer from '../../components/CartContainer';
 import { Container } from './styles';
 
-const Main = () => {
-  async function getData() {
-    const response = await cuck.get('/abaixo');
-    console.log(response.data);
-    return response;
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  return (
-    <Container>
-      <h1>meu site</h1>
-    </Container>
-  );
-};
-
-export default Main;
+const FretePago = () => (
+  <Container>
+    <CartContainer />
+  </Container>
+);
+export default FretePago;
